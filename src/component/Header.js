@@ -1,5 +1,4 @@
 import React from 'react';
-import { SearchBox } from './SearchBox';
 
 export const Header = () => (
     <div className="header">
@@ -7,7 +6,6 @@ export const Header = () => (
             <h4>
                 netfliximitation
             </h4>
-            <SearchBox/>
         </div>
     </div>
 );

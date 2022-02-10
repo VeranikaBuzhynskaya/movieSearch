@@ -39,7 +39,9 @@ body {
 
 .search-form {
     display: flex;
-    padding: 20px 40px;
+    width: 70%;
+    padding: 20px 0;
+    margin: 0 auto;
 
     .search-field {
         width: 100%;
@@ -62,10 +64,31 @@ body {
     }
 }
 
-
-// -------Content-------
+//--------Content-------
 
 .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: 100%;
+}
+
+//-----Not Found--------
+
+.movies-not-found {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    h2 {
+        text-align: center;
+        color: rgb(251, 99, 98);
+    }
+}
+
+
+// -------Movies List-------
+
+.movies-content {
     display: flex;
     flex-flow: row wrap;
     width: 70%;

@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFetchMovies } from '../hooks/useFetchMovies';
-import { Poster } from './Poster';
+import { MoviesList } from './MoviesList';
+import { SearchBox } from './SearchBox';
+import { MoviesNotFound } from './MoviesNotFound';
 
 export const Content = () => {
-    const {films} = useFetchMovies(null);
+    const [searchTerm, setSearchTerm] = useState("");
+    const {movies} = useFetchMovies();
+
+    const filteredData = movies && movies.filter((item) => {
+        return Object.values(item).join('').toLowerCase().includes(searchTerm.toLowerCase())
+    });
 
     return (
         <div className="content">
-            {
-                films && films.map(p => (
-                    <Poster key={p.kinopoiskId} value={p} />
-                ))
+            <SearchBox searchTerm={searchTerm} onFilter={setSearchTerm}/>
+            { filteredData && filteredData.length > 0 
+                ? <MoviesList movies={filteredData}/> 
+                : <MoviesNotFound/>
             }
         </div>
     );
