@@ -1,22 +1,14 @@
-import React, { useState } from 'react';
-import { useFetchMovies } from '../hooks/useFetchMovies';
+import React from 'react';
 import { MoviesList } from './MoviesList';
 import { SearchBox } from './SearchBox';
 import { MoviesNotFound } from './MoviesNotFound';
 
-export const Content = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-    const {movies} = useFetchMovies();
-
-    const filteredData = movies && movies.filter((item) => {
-        return Object.values(item).join('').toLowerCase().includes(searchTerm.toLowerCase())
-    });
-
+export const Content = ({searchTerm, onFilter, movies}) => {
     return (
         <div className="content">
-            <SearchBox searchTerm={searchTerm} onFilter={setSearchTerm}/>
-            { filteredData && filteredData.length > 0 
-                ? <MoviesList movies={filteredData}/> 
+            <SearchBox searchTerm={searchTerm} onFilter={onFilter}/>
+            { movies && movies.length > 0 
+                ? <MoviesList movies={movies}/> 
                 : <MoviesNotFound/>
             }
         </div>

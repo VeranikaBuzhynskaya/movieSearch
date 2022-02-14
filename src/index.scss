@@ -21,7 +21,7 @@ body {
 // -------Header-------
 
 .header {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
 
     .fond-image {
         background-image: url("https://help.nflxext.com/0af6ce3e-b27a-4722-a5f0-e32af4df3045_what_is_netflix_5_en.png");
@@ -68,14 +68,13 @@ body {
 
 .content {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    height: 100%;
+    flex-flow: column;
+    flex: 1 0 auto;
 }
 
 //-----Not Found--------
 
-.movies-not-found {
+.movies-not-found, .no-match {
     height: 100%;
     width: 70%;
     margin: 0 auto;
@@ -84,7 +83,6 @@ body {
         color: rgb(251, 99, 98);
     }
 }
-
 
 // -------Movies List-------
 
