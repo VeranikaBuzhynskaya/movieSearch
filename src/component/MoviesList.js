@@ -6,7 +6,7 @@ export const MoviesList = ({movies}) => {
         <div className="movies-content">
             {
                 movies && movies.map(p => (
-                    <Poster key={p.kinopoiskId} value={p} />
+                    <Poster key={p.kinopoiskId ? p.kinopoiskId : p.filmId} value={p} />
                 ))
             }
         </div>

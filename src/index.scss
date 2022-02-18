@@ -126,6 +126,57 @@ body {
     }
 }
 
+//------ Move Description -----
+
+.move-description-part{
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 auto;
+    justify-content: space-around;
+    padding: 20px 40px;
+
+    .poster-image{
+        width: 200px;
+        height: 270px;
+    }
+    
+    .description-part{
+        position: relative;
+
+        h2 {
+            color: rgb(251, 99, 98);
+            margin-bottom: 15px;
+        }
+
+        .raiting {
+            font-size: 12px;
+            color: rgb(133, 133, 132);
+            padding: 8px;
+            border-radius: 50%;
+            border: 2px solid rgb(133, 133, 132);
+        }
+        
+        .runtime-and-release-year {
+            span {
+                display: inline-block;
+                color: black;
+                font-size: 16px;
+                font-weight: bold;
+                margin-right: 20px;
+            }
+        }
+        
+        .description {
+            font-size: 14px;
+            padding: 20px 0;
+            width: 400px;
+            color: black;
+        }
+    }
+    
+}
+
+
 
 // -------Footer-------
 

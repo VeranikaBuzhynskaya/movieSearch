@@ -4,13 +4,9 @@ import { Content } from '../component/Content';
 
 export const MainPage = () => {
     const [searchTerm, setSearchTerm] = useState("");
-    const {movies} = useFetchMovies();
-
-    const filteredData = movies && movies.filter((item) => {
-        return Object.values(item).join('').toLowerCase().includes(searchTerm.toLowerCase())
-    });
+    const {movies} = useFetchMovies(searchTerm);
 
     return (
-        <Content searchTerm={searchTerm} onFilter={setSearchTerm} movies={filteredData}/>
+        <Content searchTerm={searchTerm} onFilter={setSearchTerm} movies={movies}/>
     );
 }
